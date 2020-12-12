@@ -10,6 +10,6 @@ import retrofit2.http.GET;
 
 public interface Api {
     @GET("products")
-    Call<List<Producto>> getAllProducts();
+    Call<List<Producto>> getAllProducts();//getAllProducts se ocupa en la instancia de retrofit del viewmodel
 
 }

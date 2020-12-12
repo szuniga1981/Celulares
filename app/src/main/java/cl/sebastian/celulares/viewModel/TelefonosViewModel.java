@@ -2,6 +2,8 @@ package cl.sebastian.celulares.viewModel;
 
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
@@ -15,6 +17,11 @@ import retrofit2.Retrofit;
 
 public class TelefonosViewModel extends ViewModel {
     private static final String TAG = "ViewModel";
+    private MutableLiveData<List<Producto>> listaProducto = new MutableLiveData<>();
+
+    public LiveData<List<Producto>> getListaProducto() {
+        return listaProducto;
+    }
 
     // se comunica con el modelo para obtener datos
     //se comunica con la vista para que haga algo con estos datos
@@ -25,6 +32,8 @@ public class TelefonosViewModel extends ViewModel {
             @Override
             public void onResponse(Call<List<Producto>> call, Response<List<Producto>> response) {
                 Log.d(TAG, "onResponse: obteniendo list<Producto<"+response.body());
+                listaProducto.setValue(response.body());
+
             }
 
             @Override

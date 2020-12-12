@@ -3,7 +3,7 @@ package cl.sebastian.celulares.model;
 public class Producto {
     private int id;
     private String name;
-    private int Price;
+    private int price;
     private String image;
 
     public int getId() {
@@ -23,11 +23,11 @@ public class Producto {
     }
 
     public int getPrice() {
-        return Price;
+        return price;
     }
 
     public void setPrice(int price) {
-        Price = price;
+        this.price = price;
     }
 
     public String getImage() {
@@ -43,7 +43,7 @@ public class Producto {
         return "Producto{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", Price=" + Price +
+                ", Price=" + price +
                 ", imageUrl='" + image + '\'' +
                 '}';
     }
